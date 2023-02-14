@@ -1,0 +1,9 @@
+javascript:document.querySelector('#city').value='Одеса';
+javascript:document.querySelector('#city').click();
+javascript:document.querySelector('#cityautocomplete-list > div').click();
+javascript:document.querySelector('#street').value='Пішонівська вул.';
+javascript:document.querySelector('#street').click();
+javascript:document.querySelector('#streetautocomplete-list > div').click();
+javascript:document.querySelector('#house_num').value='26/2';
+javascript:document.querySelector('#house_num').click();
+javascript:document.querySelector('#house_numautocomplete-list > div').click();

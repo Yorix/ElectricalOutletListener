@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btnStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/dark_gray"
+        android:minWidth="150dp"
+        android:onClick="onClickStart"
+        android:text="@string/start"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnStop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/dark_gray"
+        android:minWidth="150dp"
+        android:onClick="onClickStop"
+        android:text="@string/stop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnStart" />
+
+    <ImageView
+        android:id="@+id/imageViewServiceStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:contentDescription="@string/service_status"
+        android:minWidth="32dp"
+        android:minHeight="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageViewPowerStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="20dp"
+        android:contentDescription="@string/power_status"
+        android:minWidth="32dp"
+        android:minHeight="16dp"
+        app:layout_constraintStart_toStartOf="@id/imageViewServiceStatus"
+        app:layout_constraintTop_toBottomOf="@id/imageViewServiceStatus" />
+
+    <!--    <ImageView-->
+    <!--        android:id="@+id/imageViewUserRequest"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="24dp"-->
+    <!--        android:layout_marginEnd="20dp"-->
+    <!--        android:contentDescription="@string/user_request"-->
+    <!--        android:minWidth="16dp"-->
+    <!--        android:minHeight="16dp"-->
+    <!--        android:background="@color/light_gray"-->
+    <!--        app:layout_constraintStart_toStartOf="@id/imageViewPowerStatus"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/imageViewPowerStatus" />-->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="-4dp"
+        android:text="@string/service_status"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@id/imageViewServiceStatus"
+        app:layout_constraintTop_toTopOf="@id/imageViewServiceStatus" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="-4dp"
+        android:text="@string/power_status"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@id/imageViewPowerStatus"
+        app:layout_constraintTop_toTopOf="@id/imageViewPowerStatus" />
+
+    <!--    <TextView-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="32dp"-->
+    <!--        android:layout_marginTop="-4dp"-->
+    <!--        android:text="@string/user_request"-->
+    <!--        android:textSize="16sp"-->
+    <!--        app:layout_constraintStart_toEndOf="@id/imageViewUserRequest"-->
+    <!--        app:layout_constraintTop_toTopOf="@id/imageViewUserRequest" />-->
+
+
+    <DatePicker
+        android:id="@+id/date_picker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:calendarViewShown="false"
+        android:datePickerMode="spinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnStop" />
+
+    <TimePicker
+        android:id="@+id/time_picker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:timePickerMode="spinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/date_picker" />
+
+    <EditText
+        android:id="@+id/time_seconds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:textSize="12sp"
+        android:autofillHints="time_seconds"
+        app:layout_constraintStart_toEndOf="@id/time_picker"
+        app:layout_constraintTop_toTopOf="@id/time_picker"
+        app:layout_constraintBottom_toBottomOf="@id/time_picker" />
+
+    <Button
+        android:id="@+id/btnSetTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/dark_gray"
+        android:minWidth="150dp"
+        android:onClick="onClickSetTime"
+        android:text="@string/set_time"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

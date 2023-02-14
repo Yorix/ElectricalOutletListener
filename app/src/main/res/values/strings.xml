@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">Electrical Outlet Listener</string>
+
+    <string name="start_check_schedule_delay">1h</string><!-- 1, 6s, 6m, 6h, 6d, 6w, 6M, 6Y -->
+    <string name="check_schedule_delay">1d</string><!-- 500, 6s, 6m, 6h, 6d, 6w, 6M, 6Y -->
+    <string name="schedule_input_delay">1s</string><!-- 500, 1s, 2s, 1m -->
+
+    <string name="user_caption">[\\w\\W]*user[\\w\\W]*</string>
+    <string name="cat_caption">[\\w\\W]*(cat|puss)[\\w\\W]*</string>
+    <string name="sticker_caption">[\\w\\W]*sticker[\\w\\W]*</string>
+    <string name="js_caption">[\\w\\W]*js[\\w\\W]*</string>
+    <string name="keyboard_caption">[\\w\\W]*keyboard[\\w\\W]*</string>
+    <string name="html_caption">[\\w\\W]*html[\\w\\W]*</string>
+
+    <string name="js_requests_filename">js_requests.txt</string>
+    <string name="keyboard_filename">keyboard.txt</string>
+    <string name="messages_filename">message_list.txt</string>
+    <string name="user_list_filename">user_list.txt</string>
+    <string name="cat_list_filename">cat_list.txt</string>
+    <string name="sticker_list_filename">sticker_list.txt</string>
+    <string name="sticker_default">CAACAgQAAxkBAAIbAAFj54N4S9L5_vDOyKFr0xI9DU_TPQACOwQAAlGMzwEXLHB6vq7Cyi4E</string>
+    <string name="wrapper_html_filename">wrapper.html</string>
+    <string name="table_proxy">TABLE_xo4029rEpw5m</string>
+    <string name="schedule_html_filename">schedule.html</string>
+    <string name="schedule_image_filename">schedule.png</string>
+    <string name="maybe_electricity_filename">maybe_electricity.png</string>
+    <string name="no_electricity_filename">no_electricity.png</string>
+    <string name="time_filename">time.txt</string>
+    <string name="log_filename">log.txt</string>
+
+    <string name="image_ac_on">https://i.postimg.cc/CMk3FcTZ/bulb-on.png</string>
+    <string name="image_ac_off">https://i.postimg.cc/brnp8P0d/bulb-off.png</string>
+    <string name="message_ac_on">Электричество включено💡</string>
+    <string name="message_ac_off">Электричество отключено🔌</string>
+    <string name="date_format">\nd MMMM yyyy\nHH:mm:ss</string>
+    <string name="done">Done!</string>
+    <string name="fail">Fail…</string>
+    <string name="describe_check_schedule_command">\nEnter \'$startChkDelay 0\' command to apply new settings.</string>
+    <string name="show_pussy">[\\w\\W]*(киск[аиеу]|🐈)[\\w\\W]*</string>
+    <string name="schedule">[\\w\\W]*график[\\w\\W]*</string>
+    <string name="commands_list">
+        $$msg\n$msgDlt\n$usr\n$usrNum\n$usrSv\n$log\$logDlt\n$btr\n
+        \n$acOnImg https://url\n$acOffImg https://url\n$acOnMsg message\n$acOffMsg message\n$timePtn \\nd MMMM yyyy\\nHH:mm:ss\n
+        \n$id message\n$all message\n
+        \n$startChkDelay 1h[smhdwMy]\n$chkDelay 1d[smhdwMy]\n$inputDelay 1s[smhdwMy]\n
+        \n$schdlUrl https://url\n$tblId tableRenderElem\n$cellCls cell-scheduled\n
+        \n{user_list.txt}\n{keyboard.txt}\n{js_requests.txt}\n{cat_list.txt}\n{sticker_list.txt}\n{schedule.png}
+    </string>
+
+    <string name="start">Start service</string>
+    <string name="stop">Stop service</string>
+    <string name="service_status">Service status</string>
+    <string name="power_status">Power status</string>
+    <string name="set_time">Set time</string>
+    <string name="set_date">Set date</string>
+</resources>
