@@ -1,6 +1,7 @@
 package com.yorix.electricaloutletlistener;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -20,6 +21,7 @@ import java.io.File;
 import java.util.ArrayList;
 
 public class WebActivity extends AppCompatActivity {
+    private static int tryCount;
     private final IO io = new IO(this);
     private String
             scheduleHtmlFilename,
@@ -97,12 +99,18 @@ public class WebActivity extends AppCompatActivity {
                                     "javascript:window.HtmlHandler.handleHtml(" +
                                             "'<html>'+document.getElementsByTagName('html')[0].innerHTML+'</html>');",
                                     handled -> {
-                                        if (Boolean.parseBoolean(handled))
+                                        if (Boolean.parseBoolean(handled)) {
                                             view.evaluateJavascript(
                                                     "javascript:window.HtmlHandler.render();",
                                                     null);
-                                        else
+                                            tryCount = 0;
+                                        } else if (tryCount++ < 2) {
+                                            WebActivity.this.sendBroadcast(new Intent("checkSchedule"));
                                             finish();
+                                        } else {
+                                            tryCount = 0;
+                                            finish();
+                                        }
                                     }),
                     delay * jsRequests.size());
         }
