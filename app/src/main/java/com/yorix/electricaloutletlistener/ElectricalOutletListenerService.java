@@ -107,6 +107,7 @@ public class ElectricalOutletListenerService extends Service {
         handler = new Handler();
         handler.postDelayed(checkSchedule, startCheckScheduleDelay);
 
+        registerReceiver(checkSchedule, new IntentFilter("checkSchedule"));
         registerReceiver(acReceiver, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
         registerReceiver(failListHandler, new IntentFilter("failList"));
 
@@ -180,7 +181,13 @@ public class ElectricalOutletListenerService extends Service {
     }
 
 
-    private class CheckSchedule implements Runnable {
+    private class CheckSchedule extends BroadcastReceiver implements Runnable {
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            run();
+        }
+
         @Override
         public void run() {
             KeyguardManager km = (KeyguardManager) getSystemService(Context.KEYGUARD_SERVICE);
@@ -207,6 +214,7 @@ public class ElectricalOutletListenerService extends Service {
     }
 
     private class AcReceiver extends BroadcastReceiver {
+
         @Override
         public void onReceive(Context context, Intent intent) {
             batteryLevel = intent.getIntExtra(BatteryManager.EXTRA_LEVEL, 0);
@@ -237,6 +245,7 @@ public class ElectricalOutletListenerService extends Service {
     }
 
     private class FailListHandler extends BroadcastReceiver {
+
         @Override
         public void onReceive(Context context, Intent intent) {
             String message = intent.getStringExtra("message");
@@ -257,6 +266,7 @@ public class ElectricalOutletListenerService extends Service {
     }
 
     private class UpdateHandler {
+
         public void handle(Update update) {
             if (update.message() == null) return;
 
